@@ -1,0 +1,54 @@
+$value: 15;
+$interval: 5;
+
+@while $value < 100px {
+    .m\:#{$value} {
+        margin: #{$value}px !important;
+    }
+    .my\:#{$value} {
+        margin-top: #{$value}px !important;
+        margin-bottom: #{$value}px !important;
+    }
+    .mx\:#{$value} {
+        margin-left: #{$value}px !important;
+        margin-right: #{$value}px !important;
+    }
+    .mb\:#{$value} {
+        margin-bottom: #{$value}px !important;
+    }
+    .mt\:#{$value} {
+        margin-top: #{$value}px !important;
+    }
+    .ml\:#{$value} {
+        margin-left: #{$value}px !important;
+    }
+    .mr\:#{$value} {
+        margin-right: #{$value}px !important;
+    }
+
+    .p\:#{$value} {
+        padding: #{$value}px !important;
+    }
+    .py\:#{$value} {
+        padding-top: #{$value}px !important;
+        padding-bottom: #{$value}px !important;
+    }
+    .px\:#{$value} {
+        padding-left: #{$value}px !important;
+        padding-right: #{$value}px !important;
+    }
+    .pb\:#{$value} {
+        padding-bottom: #{$value}px !important;
+    }
+    .pt\:#{$value} {
+        padding-top: #{$value}px !important;
+    }
+    .pl\:#{$value} {
+        padding-left: #{$value}px !important;
+    }
+    .pr\:#{$value} {
+        padding-right: #{$value}px !important;
+    }
+
+    $value: $value + $interval;
+}

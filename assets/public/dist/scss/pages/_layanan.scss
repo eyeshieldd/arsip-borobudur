@@ -1,0 +1,9 @@
+.has-actions {
+    .input-group {
+        &:not(:last-child) {
+            .btn-add {
+                display: none;
+            }
+        }
+    }
+}

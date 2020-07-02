@@ -1,0 +1,13 @@
+@each $name, $color in $theme-colors {
+    .btn-#{$name} {
+        background: $color;
+        border-color: $color;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background: lighten($color, 10%);
+            border-color: lighten($color, 10%);
+        }
+    }
+}

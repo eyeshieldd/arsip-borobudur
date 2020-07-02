@@ -1,0 +1,20 @@
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+  ) !default;
+
+$logo-height: (
+    xs: 50px,
+    md: 60px,
+    lg: 50px,
+    xl: 65px,
+);
+
+$theme-colors: (
+    primary: #13B8CD,
+    white: #fff,
+    muted: #999,
+);

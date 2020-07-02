@@ -1,0 +1,45 @@
+body {
+  font-family: "Lato", "Helvetica", sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+.app {
+  position: relative;
+  overflow-x: hidden;
+}
+
+@for $i from 12 through 50 {
+  .fs-#{$i} {
+    font-size: #{$i}px;
+  }
+}
+
+
+.line-height-single {
+  line-height: 1;
+}
+.line-height-normal {
+  line-height: 1.75;
+}
+.line-height-double {
+    line-height: 2;
+}
+
+.text-shadow {
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: bold;
+  background: #e3e3e3;
+  color: map-get($theme-colors, "primary");
+  padding: 12px 25px;
+
+  &.primary {
+    background: map-get($theme-colors, "primary");
+    color: #fff;
+  }
+}

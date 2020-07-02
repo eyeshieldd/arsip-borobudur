@@ -1,0 +1,64 @@
+.tp-bullets {
+    @each $name, $value in $grid-breakpoints {
+        @include media-breakpoint-up($name) {
+            &.#{$name}\:bullet-custom {
+                display: flex;
+                opacity: 1;
+
+                .bullet {
+                    width: 10px;
+                    height: 10px;
+                    border: 1px solid transparent;
+                    border-radius: 50rem;
+                    cursor: pointer;
+                    margin-right: 3px;
+                    margin-left: 3px;
+                    border-color: #fff;
+
+                    &:before {
+                        content: ' ';
+                    }
+        
+                    &.selected {
+                        background: #fff;
+                    }
+                }
+            }
+
+            &.#{$name}\:number {
+                display: flex;
+                opacity: 1;
+            
+                .bullet {
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid transparent;
+                    border-radius: 50rem;
+                    font-size: 90%;
+                    cursor: pointer;
+                    margin-right: 3px;
+                    margin-left: 3px;
+                    color: #fff;
+
+                    &.selected {
+                        border-color: #fff;
+                        background: transparent;
+                        color: map-get($theme-colors, 'primary');
+                        border-color: map-get($theme-colors, 'primary');
+                    }
+        
+                    @for $i from 1 through 15 {
+                        &:nth-child(#{$i}) {
+                            &:before {
+                                content: "#{$i}";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,159 @@
+#header {
+  border-bottom: 1px solid map-get($theme-colors, "primary");
+
+  &.home {
+    border-bottom: none;
+  }
+
+  .navbar {
+    position: inherit;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .navbar-toggler {
+      color: map-get($theme-colors, "primary");
+      border: 0;
+      outline: none !important;
+
+      i {
+        font-size: 25px;
+      }
+    }
+
+    .nav-item {
+      .nav-link {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
+
+      &.active {
+        .nav-link {
+          border-bottom: 3px solid map-get($theme-colors, "primary");
+        }
+      }
+    }
+
+    .social-media {
+      flex-direction: row;
+      padding: 0 15px;
+      
+      .nav-item {
+        .nav-link {
+          padding: 10px !important;
+          border-bottom: 0 !important;
+          font-size: 20px;
+        }
+      }
+    }
+
+    .search-box {
+      input.form-control {
+        width: 275px;
+        background: #f0f0f0;
+        border: none;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1) !important;
+        border-radius: 10px;
+      }
+
+      .input-group-append {
+        position: absolute;
+        right: 15px;
+      }
+    }
+  }
+
+  .navbar-brand {
+    img {
+      height: 100%;
+      max-height: 100%;
+    }
+  }
+
+  @each $breakpoint, $value in $logo-height {
+    @include media-breakpoint-up($breakpoint) {
+      .navbar-brand {
+        img {
+          max-height: $value;
+        }
+      }
+    }
+  }
+}
+
+@each $breakpoint, $value in $grid-breakpoints {
+  $next: breakpoint-next($breakpoint);
+
+  @media (max-width: breakpoint-max($breakpoint)) {
+    #header {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+      border-bottom: 0;
+    }
+
+    .navbar-expand-#{$next} {
+      #navbar-menu {
+        z-index: 1025;
+        position: absolute;
+        min-width: 250px;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        overflow-y: auto;
+        background: map-get($theme-colors, "primary");
+        transform: translate(100%, 0);
+        transition: all 0.1s;
+        flex-direction: column;
+        display: flex;
+
+        .navbar-nav {
+          width: 100%;
+        }
+
+        .nav-item {
+          .nav-link {
+            padding: 15px 25px;
+            color: #fff;
+            border-bottom: 1px solid rgba(255, 255, 255, .2);
+          }
+
+          &.active {
+            .nav-link {
+              background-color: rgba(255, 255, 255, .2);
+              border-right: 5px solid #fff;
+            }
+          }
+        }
+
+        .search-box {
+          padding: 15px 15px;
+          border-bottom: 1px solid rgba(255, 255, 255, .8);
+
+          input.form-control {
+            color: #fff;
+            background: rgba(255, 255, 255, .5);
+            border: none;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1) !important;
+            border-radius: 10px;
+          }
+
+          .input-group-append {
+            position: absolute;
+            right: 15px;
+
+            .btn {
+              color: #fff; 
+            }
+          }
+        }
+      }
+    }
+
+    .navbar-show {
+
+      #navbar-menu {
+        transform: translateX(0);
+      }
+    }
+  }
+}

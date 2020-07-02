@@ -1,0 +1,16 @@
+@import './variables';
+@import './mixins';
+
+
+@import './components/core';
+@import './components/header';
+@import './components/footer';
+@import './components/revolution';
+@import './components/buttons';
+@import './components/form';
+
+@import './pages/home';
+@import './pages/layanan';
+
+
+@import './utilities/spacing';
